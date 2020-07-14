@@ -20,6 +20,7 @@ public class Member {
     @Column(name = "NAME")
     private String username;
 
+    @Column(name = "AGE")
     private Integer age;
 
 }
