@@ -41,7 +41,7 @@ public class JpaMain {
     }
 
     private static void logic(EntityManager em){
-        String id = "id2";
+        String id = "id7";
         Member member = new Member();
         member.setId(id);
         member.setUsername("celine");
@@ -50,6 +50,13 @@ public class JpaMain {
         //등록
         em.persist(member);
 
-        member.setAge(20);
+
+        Member findMember = em.find(Member.class,"id7");
+        Member findMember2 = em.find(Member.class,"id4");
+
+        System.out.println("== :" + (findMember == findMember2));
+        System.out.println("equals() : " + (findMember.equals(findMember2)));
+
+        //member.setAge(20);
     }
 }
